@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>AI Bookmark Sidebar</title>
+<style>
+  body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #f8f9fc;
+  }
+  #root {
+    width: 440px; /* 넓힘 */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  h2 {
+    margin: 0 0 6px;
+    font-size: 17px;
+  }
+  #bookmarkTree {
+    flex: 1;
+    overflow-y: auto;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  .folder {
+    font-weight: 600;
+    margin: 6px 0;
+    cursor: pointer;
+    color: #3857b2;
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    margin: 3px 0 3px 18px;
+  }
+  #selectedBox {
+    margin-top: 10px;
+    min-height: 40px;
+    padding: 8px;
+    border-radius: 6px;
+    background: #eef2ff;
+  }
+  .tag {
+    display: inline-block;
+    background: #4c6ef5;
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 12px;
+    margin: 2px;
+  }
+  #buttons {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  button {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 0;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  #summaryBox {
+    margin-top: 10px;
+    background: white;
+    border: 1px solid #dadada;
+    border-radius: 8px;
+    padding: 10px;
+    flex: 1;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+</style>
+</head>
+<body>
+<div id="root">
+  <h2>북마크 선택 & 요약</h2>
+
+  <div id="bookmarkTree"></div>
+
+  <div id="selectedBox"></div>
+
+  <div id="buttons">
+    <button id="btnIngest" style="background:#4c6ef5; color:white">AI에 저장(Ingest)</button>
+    <button id="btnSummary" style="background:#0c9e6b; color:white">요약 생성</button>
+  </div>
+
+  <div id="summaryBox" placeholder="요약이 여기에 나타납니다"></div>
+</div>
+<script src="sidepanel.js"></script>
+</body>
+</html>
