@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>AI Bookmarker - Options</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="options-body">
+  <div class="options-container">
+    <h1>설정</h1>
+
+    <div class="form-group">
+      <label for="api_provider">AI Provider</label>
+      <select id="api_provider">
+        <option value="openai">OpenAI</option>
+        <option value="google">Google (Gemini)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="api_key">API Key</label>
+      <div id="api_key_status" class="hidden">
+        <span>API 키가 저장되었습니다.</span>
+        <button id="clear_api_key_btn" class="link-button">삭제</button>
+      </div>
+      <input id="api_key" type="password" placeholder="sk-..." />
+    </div>
+
+    <div class="hint">사용할 AI의 API 키를 입력 후 저장하세요.</div>
+
+    <button id="save-btn" class="primary-btn">저장</button>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# node / frontend
+node_modules/
+dist/
+
+# mac / windows
+.DS_Store
+Thumbs.db
+
+# python 캐시 등 (혹시 쓸 수 있으니)
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/

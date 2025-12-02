@@ -1,0 +1,290 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-icon {
+  width: 24px;
+  height: 24px;
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #666;
+  margin: 2px 0 0;
+}
+
+.link-button {
+  border: none;
+  background: none;
+  font-size: 12px;
+  color: #0077cc;
+  cursor: pointer;
+  padding: 0;
+}
+
+.link-button:hover {
+  text-decoration: underline;
+}
+
+.banner {
+  background: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 6px 8px;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.banner.hidden {
+  display: none;
+}
+
+.folder-header {
+  cursor: pointer;
+  padding: 2px;
+  padding-left: 16px; /* 화살표 공간 */
+  position: relative;
+}
+
+.folder-header::before {
+  content: '▼';
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  transition: transform 0.1s ease-in-out;
+}
+
+.collapsed > .folder-header::before {
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.collapsed > .folder-children { display: none; }
+
+.action-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.action-group {
+  display: flex;
+  gap: 6px;
+}
+
+.action-controls select,
+.action-controls input[type="text"] {
+  flex: 1;
+  padding: 4px;
+  font-size: 12px;
+  border: 1px solid #d1d5db;
+}
+
+.layout {
+  display: flex;
+  height: calc(100vh - 70px);
+  gap: 6px;
+}
+
+.left-pane,
+.right-pane {
+  flex: 1;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pane-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.pane-header h2 {
+  font-size: 13px;
+  margin: 0;
+}
+
+.tree {
+  flex: 1;
+  overflow: auto;
+  font-size: 12px;
+}
+
+.tree ul {
+  list-style: none;
+  padding-left: 14px;
+  margin: 0;
+}
+
+.tree li {
+  margin: 2px 0;
+}
+
+.bookmark-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bookmark-item label {
+  cursor: pointer;
+}
+
+.primary-btn,
+.secondary-btn {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.secondary-btn {
+  background: #f3f4f6;
+  border-color: #e5e7eb;
+  color: #374151;
+}
+
+.secondary-btn:hover {
+  background: #e5e7eb;
+}
+
+.summary {
+  flex: 1;
+  font-size: 12px;
+  white-space: pre-wrap;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 6px;
+  margin: 0;
+  overflow: auto;
+}
+
+.grouping-result {
+  border: 1px solid #dbeafe;
+  background-color: #eff6ff;
+  border-radius: 4px;
+  padding: 6px 8px;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.grouping-result.hidden {
+  display: none;
+}
+
+.grouping-result h3 {
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+.grouping-actions {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid #eee;
+}
+.grouping-actions.hidden {
+  display: none;
+}
+
+/* styles.css에 추가 */
+.bm-checkbox {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.bookmark-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+}
+
+.folder-list, .root-list {
+  list-style: none;
+  padding-left: 14px;
+  margin: 4px 0;
+}
+
+/* options.html 용 스타일 */
+.options-body {
+  width: 400px;
+  padding: 0;
+  background-color: #f9fafb;
+}
+
+.options-container {
+  padding: 20px;
+}
+
+.options-container h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+select,
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input.hidden, div.hidden {
+  display: none;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Bookmarker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-title">
+      <img src="icon.svg" alt="AI Bookmarker Icon" class="header-icon" />
+      <div>
+        <h1>AI Bookmarker</h1>
+      </div>
+      <p class="subtitle">북마크를 선택하고 AI 요약을 받아보세요.</p>
+    </div>
+    <button id="open-options-btn" class="link-button">설정</button>
+  </header>
+
+  <section id="config-warning" class="banner hidden">
+    <strong>설정 필요:</strong> <a href="#" id="open-options-from-banner">옵션 페이지</a>에서 API Key를 입력하세요.
+  </section>
+
+  <section class="layout">
+    <div class="left-pane">
+      <h2>북마크</h2>
+      <div id="bookmark-tree" class="tree">Loading...</div>
+    </div>
+
+    <div class="right-pane">
+      <h2>요약</h2>
+      <div class="action-controls">
+        <div class="action-group">
+          <select id="action-select">
+            <option value="summarize">요약하기</option>
+            <option value="group">그룹화하기</option>
+          </select>
+          <select id="model-select"></select>
+          <input type="text" id="model-input-custom" class="hidden" placeholder="모델 이름 직접 입력..."/>
+        </div>
+        <div class="action-group">
+          <button id="execute-btn" class="primary-btn">실행</button>
+          <button id="copy-md-btn" class="secondary-btn">Markdown 복사</button>
+        </div>
+      </div>
+      <div id="grouping-output" class="grouping-result hidden"></div>
+      <div id="grouping-actions" class="grouping-actions hidden"></div>
+      <pre id="summary-output" class="summary">요약할 북마크를 선택하세요.</pre>
+    </div>
+  </section>
+
+<!-- 마지막 부분 -->
+  <script src="libs/analytics.js"></script>
+  <script src="libs/ai_client.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

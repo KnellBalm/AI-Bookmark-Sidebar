@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "AI Bookmarker",
+  "version": "0.1.0",
+  "description": "북마크를 AI로 요약·정리하고 관리하는 확장 프로그램입니다.",
+  "permissions": [
+    "bookmarks",
+    "tabs",
+    "storage",
+    "activeTab",
+    "sidePanel",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://api.openai.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://www.google-analytics.com/*",
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "AI Bookmarker"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
