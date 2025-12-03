@@ -1,6 +1,7 @@
 // ----------------------------------------------
 // GA4 Measurement Protocol for Chrome Extension
 // 안정 & 단일 책임 버전
+// 여기서 이제 GA4 관련 설정을 한다고 한다.
 // ----------------------------------------------
 
 const GA4_MEASUREMENT_ID = "G-L1KDDBYZ0Y";
@@ -12,7 +13,7 @@ const GA4_ENDPOINT =
 // libs/analytics.js
 // non-module 버전 — 전역으로 trackEvent 제공
 
-const GA4_DEBUG = true; // 디버그 모드: true면 debug endpoint로 전송 및 콘솔 출력
+const GA4_DEBUG = false; // 디버그 모드: false로 변경하여 배포
 
 function _getClientId() {
   return new Promise((resolve) => {
